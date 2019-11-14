@@ -61,56 +61,7 @@
             <img class="back-card" src="img/bamboo.jpg" alt="Bamboo mat" />
         </div>
     </section>
-    <script>
-        const cards = document.querySelectorAll(".card");
-        for (const card of cards) {
-            card.addEventListener("click", onCardClicked);
-        }
-
-        let isClickBlocked = false;
-        let firstCard;
-        let secondCard;
-
-        function flipCard(card) {
-            card.classList.toggle("flip");
-        }
-
-        function onCardClicked() {
-            if (isClickBlocked) {
-                return;
-            }
-            if (!firstCard) {
-                firstCard = this;
-                flipCard(this);
-            } else {
-                secondCard = this;
-                flipCard(this);
-                if (doCardsMatch()) {
-                    firstCard.removeEventListener("click", onCardClicked);
-                    secondCard.removeEventListener("click", onCardClicked);
-                    firstCard = null;
-                    secondCard = null;
-                } else {
-                    isClickBlocked = true;
-                    setTimeout(() => {
-                        flipCard(firstCard);
-                        flipCard(secondCard);
-                        firstCard = null;
-                        secondCard = null;
-                        isClickBlocked = false;
-                    }, 750)
-                }
-            }
-
-        }
-
-        function doCardsMatch() {
-            if (firstCard.dataset.sushi === secondCard.dataset.sushi) {
-                return true;
-            }
-            return false;
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
