@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function onCardClicked() {
-        console.log(firstCard);
-        console.log(this);
         if (isClickBlocked || firstCard === this) {
             return;
         }
