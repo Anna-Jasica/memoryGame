@@ -20,8 +20,13 @@ input[type="button"] {
   margin: 0 auto;
   color: white;
   border-radius: 7px;
-  font-size: 3rem;
-  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-family: "JapanBrush","Courier", monospace;
+}
+
+@font-face{
+  font-family: "JapanBrush";
+  src: url("./fonts/japan.TTF");
 }
 
 input[type="button"]:hover {
@@ -92,25 +97,44 @@ input[type="button"]:hover {
   .container {
     width: 80%;
   }
-
   .card {
     width: 30%;
     height: 18%;
   }
-
-  .gameOver {
-    background: white;
+  input[type="button"]{
+    font-family: serif;
   }
 }
-
 @media (min-width: 475px) and (max-width: 600px) {
   .container {
     width: 65%;
     margin: 15% 15%;
   }
-
   .card {
     width: 30%;
     height: 23%;
   }
 }
+@media (max-width: 600px) {
+  .gameOver {
+    background-image: url("img/endgameSmall.jpg");
+    background-size: 100% 100%;
+  }
+  .front-card{
+    padding: 7%;
+  }
+  input[type="button"]{
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

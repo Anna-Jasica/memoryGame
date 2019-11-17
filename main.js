@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setBoard(cards);
 
     function setBoard(cards) {
-        /*Shuffle the board by randomly assigning new order values
-        register click event
-        */
+        //Shuffle the board by randomly assigning new order values
         for (const card of cards) {
             let newPos = Math.ceil(Math.random() * 12);
             card.style.order = newPos;
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (doCardsMatch()) {
                 firstCard.removeEventListener("click", onCardClicked);
                 secondCard.removeEventListener("click", onCardClicked);
-                //to są dwie linijki które w tej funkcji zmieniłam
                 if (firstCard !== this) {
                     removeMatched();
                 }
@@ -61,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function removeMatched() {
-        //Remove matching pait from board
+        //Remove matching pair from board
         for (const c of [firstCard, secondCard]) {
             c.classList.add("hide");
         }
@@ -82,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //Change board's appeareance, add button for page reload
         const container = document.querySelector(".container");
         container.classList.add('gameOver');
-        container.innerHTML = "<input type='button' value='Play again?'>";
+        container.innerHTML = "<input type='button' value='PLAY AGAIN?'>";
         const button = document.querySelector("input");
         button.addEventListener('click', function () {
             location.reload()
