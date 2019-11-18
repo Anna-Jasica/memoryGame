@@ -51,11 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function doCardsMatch() {
         //Check if two cards match
-        if (firstCard.dataset.sushi === secondCard.dataset.sushi) {
-            return true;
-        }
-        return false;
+        // if (firstCard.dataset.sushi === secondCard.dataset.sushi) {
+        return true;
+        // }
+        // return false;
     }
+
+    const fetchData = async () => {
+        console.log(1);
+        await fetch("https://jsonplaceholder.typicode.com/users");
+        console.log(2)
+    }
+    console.log(3);
+    fetchData();
+    console.log(4);
 
     function removeMatched() {
         //Remove matching pair from board
